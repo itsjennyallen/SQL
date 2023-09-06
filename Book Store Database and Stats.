@@ -1,0 +1,41 @@
+--Create a grocery store database
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, title TEXT, genre TEXT, author TEXT,price INTEGER);
+
+INSERT INTO bookstore VALUES (1, "Harry Potter", "fantasy", "J.K. Rowling", 12.99);
+
+INSERT INTO bookstore VALUES (2, "The Nanny", "romance", "Lana Ferguson", 12.99);
+
+INSERT INTO bookstore VALUES (3, "A Court of Thorns and Roses", "fantasy", "Sarah J. Mass", 18.99);
+
+INSERT INTO bookstore VALUES (4, "The Lakehouse", "thriller", "Riley Sager", 15.00);
+
+INSERT INTO bookstore VALUES (5, "All Good People", "thriller", "Ashley Johnson", 20.00);
+
+INSERT INTO bookstore VALUES (6, "It Ends With Us", "romance", "Colleen Hoover", 15.99);
+
+INSERT INTO bookstore VALUES (7, "It Starts With Us", "romance", "Colleen Hoover", 15.99);
+
+INSERT INTO bookstore VALUES (8, "56 Days", "thriller", "Catherine Howard", 18.00);
+
+INSERT INTO bookstore VALUES (9, "Be Brave", "self-help", "Brene Brown", 20.00);
+
+INSERT INTO bookstore VALUES (10, "The Year of Yes", "self-help", "Shondra Oh", 25.00);
+
+INSERT INTO bookstore VALUES (11, "IT", "horror", "Stephen King", 10.00);
+
+INSERT INTO bookstore VALUES (12, "Nikki Heat", "mystery", "Richard Castle", 30.00);
+
+INSERT INTO bookstore VALUES (13, "Twilight", "fantasy", "Stephanie Meyer", 15.00);
+
+INSERT INTO bookstore VALUES (14, "The Hungry Caterpillar", "childrens", "Eric Carl", 7.00);
+
+INSERT INTO bookstore VALUES (15, "Maybe Meant To Be", "romance", "K.L. Walther", 10.00);
+
+--display the database ordered by author. 
+SELECT * FROM bookstore ORDER BY author asc;
+
+--display the database by title and show which books are romance
+SELECT title FROM bookstore WHERE genre = "romance";
+
+-- display the database to show how much the total would be if you bought all the romance books
+SELECT SUM (price) FROM bookstore WHERE genre = "romance"
